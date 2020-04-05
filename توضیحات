@@ -1,0 +1,68 @@
+Event listener: document.querySelector("button").addEventListener("click",handleClick); /// callingfunction without()!
+                --
+                function handleClick(){
+                  alert("hiii");
+                  }
+
+Event listener:
+
+in event listener the function name should not have (). i dont know why!
+
+Adding event listener to lots of element
+                      var x=document.querySelectorAll(".drum");
+                      for( var i=0 ; i<x.length ; i++ )
+                      {
+                         x[i].addEventListener("click",function(){ alert("hiii");});
+                      }
+
+
+Which buttom has been triggered by the event listerner? with this you can find it:
+                      document.querySelector("button").addEventListener("click", function(){comsole.log(this);});
+
+------------------------------
+variables objects
+var Obj={ subObj1="" , subObj2=20, subObj3=[a,b,d,s]}
+
+var housekeeper1={
+name="salar" ,
+height=190,
+cleaningAreas=[bedroox,bathroom]
+}
+--------------------------
+Constructor functions
+      //they will start with Capital letter;
+       function HouseKeeper(name,height,cleaningAreas) {
+       this.name= name ;
+       this.height= height ;
+       this.cleaningAreas= cleaningAreas;
+       }
+       //
+       var housekeeper= new HouseKeeper("salar",170,[bedroom,diningroom]);
+----------------------------
+Method construction functions
+      function HouseKeeper(name) {
+      this.name= name ;
+      this.method= function(){
+                      alert("haajaa");
+                      gooz(poo);
+                      };
+      }
+      //
+      var housekeeper= new HouseKeeper("salar");
+      housekeeper.method(); ------>will alert!
+----------------------------------------
+higherorder function and event that trigger and calbacks:
+    document.addEventListener("keypress", function(event) {
+        music(event.key);}
+here event is the event that had triggered the function. then the function callback somthing with this trigger.
+here the higher order function is the addEventListener
+
+--------------------------------------------------------
+pressAnimation
+//// key class is "".w" button that pressed is w and has sended to the function by
+function pressAnimation(button){
+  var activeButton=document.querySelector("."+button);
+  activeButton.classList.add("pressed");
+  setTimeout(function(){ activeButton.classList.remove("pressed"); },100);
+/////// setTimeout do a function after a delay -- 100 is one sec.
+}
